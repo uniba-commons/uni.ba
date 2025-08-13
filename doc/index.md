@@ -10,5 +10,8 @@ hero:
     - theme: brand
       text: Manifesto
       link: /manifesto
+    - theme: brand
+      text: Roadmap
+      link: /roadmap
 ---
 

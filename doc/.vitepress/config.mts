@@ -16,6 +16,7 @@ export default defineConfig({
         text: 'Manifesto',
         items: [
           { text: 'Manifesto', link: '/manifesto' },
+          { text: 'Roadmap', link: '/roadmap' },
         ]
       }
     ],
