@@ -33,7 +33,7 @@ jobs:
 
       - name: Build VitePress site
         run: |
-          npm run build
+          npm run docs:build
           echo 'uni.ba' > docs/.vitepress/dist/CNAME
 
       - name: Upload artifact
