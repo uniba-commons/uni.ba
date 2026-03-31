@@ -7,3 +7,4 @@ hero:
   text: "A Bazaar of Creation"
 ---
 
+<SiloGrid />
