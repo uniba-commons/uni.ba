@@ -1,6 +1,6 @@
 # uni.ba
 
-The official site for [UNIBA — a Bazaar of Creation](https://uni.ba).
+The website for [UNIBA — a Bazaar of Creation](https://uni.ba).
 
 Built with [VitePress](https://vitepress.dev) and deployed to GitHub Pages.
 
