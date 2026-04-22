@@ -1,14 +1,12 @@
 <template>
   <div class="silo-section">
     <div v-if="loading" class="silo-loading">Loading...</div>
-    <div v-else-if="error" class="silo-error">Failed to load: {{ error }}</div>
-    <div v-else-if="silos.length === 0" class="silo-loading">No data available.</div>
     <div v-else id="silo-grid" class="silo-grid">
       <a
         v-for="silo in silos"
         :key="silo.slug"
         class="silo-card"
-        :href="siloURL(silo.slug)"
+        :href="silo.url ?? siloURL(silo.slug)"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -45,15 +43,20 @@ const DISCORD_ICON = `<svg width="13" height="13" viewBox="0 0 24 24" fill="curr
 interface Silo {
   slug: string
   label?: string
+  url?: string
   origin?: {
     url: string
     provider: string
   }
 }
 
+const EXTRA_SILOS: Silo[] = [
+  { slug: 'villamoderna', label: 'ビラ・モデルナ', url: 'https://nanika-access.uni.ba/villamoderna' },
+  { slug: 'midoriso', label: 'midori.so', url: 'https://nanika-access.uni.ba/midoriso' }
+]
+
 const silos = ref<Silo[]>([])
 const loading = ref(true)
-const error = ref<string | null>(null)
 
 function siloURL(slug: string): string {
   return `https://katsudou-prd.teamenv.workers.dev/~/${slug.replace(/^@/, '')}`
@@ -68,9 +71,11 @@ onMounted(async () => {
   try {
     const res = await fetch(API_URL)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    silos.value = await res.json()
+    const data: Silo[] = await res.json()
+    silos.value = [...data, ...EXTRA_SILOS]
   } catch (err) {
-    error.value = err instanceof Error ? err.message : String(err)
+    console.error('SiloGrid: failed to load silos from API, falling back to static entries', err)
+    silos.value = [...EXTRA_SILOS]
   } finally {
     loading.value = false
   }
@@ -164,15 +169,5 @@ onMounted(async () => {
 .silo-loading {
   color: var(--vp-c-text-2);
   font-size: 14px;
-}
-
-.silo-error {
-  color: var(--vp-c-danger-1);
-  font-size: 14px;
-  padding: 16px;
-  background: var(--vp-c-danger-soft);
-  border: 1px solid var(--vp-c-danger-2);
-  border-radius: 8px;
-  max-width: 400px;
 }
 </style>
