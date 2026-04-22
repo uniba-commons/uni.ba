@@ -11,8 +11,8 @@ extraSilos:
     label: ビラ・モデルナ
     url: https://nanika-access.uni.ba/villamoderna
   - slug: midoriso
-    label: midori.so
-    url: https://nanika-access.uni.ba/midoriso
+    label: Garage
+    url: https://nanika-access.uni.ba/midoriso/garage-use
 
 features:
   - icon: 🏃
