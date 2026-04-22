@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
-import SiloGrid from '../components/SiloGrid.vue'
+import BazaarQuarter from '../components/BazaarQuarter.vue'
 
 const { Layout } = DefaultTheme
 const { frontmatter } = useData()
@@ -10,7 +10,7 @@ const { frontmatter } = useData()
 <template>
   <Layout>
     <template #home-hero-after>
-      <SiloGrid :extra="frontmatter.extraSilos ?? []" />
+      <BazaarQuarter :extra="frontmatter.extraSilos ?? []" />
     </template>
     <template #home-features-before>
       <h2 class="features-heading">Step into the Bazaar</h2>
