@@ -6,6 +6,14 @@ hero:
   name: "UNIBA"
   text: "A Bazaar of Creation"
 
+extraSilos:
+  - slug: villamoderna
+    label: ビラ・モデルナ
+    url: https://nanika-access.uni.ba/villamoderna
+  - slug: midoriso
+    label: midori.so
+    url: https://nanika-access.uni.ba/midoriso
+
 features:
   - icon: 🏃
     title: Katsudou
