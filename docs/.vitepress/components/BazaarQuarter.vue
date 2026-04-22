@@ -1,5 +1,5 @@
 <template>
-  <div class="quarter-section">
+  <div class="uni-container quarter-section">
     <div v-if="loading" class="quarter-loading">Loading...</div>
     <div v-else id="quarter-grid" class="quarter-grid">
       <a
@@ -83,20 +83,18 @@ onMounted(async () => {
 
 <style scoped>
 .quarter-section {
-  max-width: 1152px;
-  margin: 0 auto;
-  padding: 24px 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .quarter-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: 16px;
 }
 
 .quarter-card {
-  width: 200px;
-  height: 200px;
+  aspect-ratio: 1;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);
   border-radius: 12px;

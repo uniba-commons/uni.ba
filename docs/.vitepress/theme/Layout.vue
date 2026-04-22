@@ -13,15 +13,15 @@ const { frontmatter } = useData()
       <BazaarQuarter :extra="frontmatter.extraSilos ?? []" />
     </template>
     <template #home-features-before>
-      <h2 class="features-heading">Step into the Bazaar</h2>
+      <div class="uni-container">
+        <h2 class="features-heading">Step into the Bazaar</h2>
+      </div>
     </template>
   </Layout>
 </template>
 
 <style scoped>
 .features-heading {
-  max-width: 1152px;
-  margin: 0 auto;
   padding: 48px 0;
   font-size: 28px;
   font-weight: 600;
