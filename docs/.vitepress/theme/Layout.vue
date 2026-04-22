@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import DefaultTheme from 'vitepress/theme'
+import { useData } from 'vitepress'
 import SiloGrid from '../components/SiloGrid.vue'
 
 const { Layout } = DefaultTheme
+const { frontmatter } = useData()
 </script>
 
 <template>
   <Layout>
     <template #home-hero-after>
-      <SiloGrid />
+      <SiloGrid :extra="frontmatter.extraSilos ?? []" />
     </template>
     <template #home-features-before>
       <h2 class="features-heading">Step into the Bazaar</h2>

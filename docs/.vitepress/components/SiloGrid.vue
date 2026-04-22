@@ -50,10 +50,9 @@ interface Silo {
   }
 }
 
-const EXTRA_SILOS: Silo[] = [
-  { slug: 'villamoderna', label: 'ビラ・モデルナ', url: 'https://nanika-access.uni.ba/villamoderna' },
-  { slug: 'midoriso', label: 'midori.so', url: 'https://nanika-access.uni.ba/midoriso' }
-]
+const props = withDefaults(defineProps<{ extra?: Silo[] }>(), {
+  extra: () => []
+})
 
 const silos = ref<Silo[]>([])
 const loading = ref(true)
@@ -72,10 +71,10 @@ onMounted(async () => {
     const res = await fetch(API_URL)
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data: Silo[] = await res.json()
-    silos.value = [...data, ...EXTRA_SILOS]
+    silos.value = [...data, ...props.extra]
   } catch (err) {
     console.error('SiloGrid: failed to load silos from API, falling back to static entries', err)
-    silos.value = [...EXTRA_SILOS]
+    silos.value = [...props.extra]
   } finally {
     loading.value = false
   }
