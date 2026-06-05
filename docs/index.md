@@ -15,7 +15,7 @@ extraSilos:
     url: https://nanika-access.uni.ba/midoriso/garage-use
   - slug: azukaritai-winenight
     label: Azukaritai ワイン会
-    url: https://discord.gg/QaVpNhHZ?event=1512262520784551946
+    url: https://discord.com/events/1362285462156480705/1512262520784551946
 
 features:
   - icon: 🏃
