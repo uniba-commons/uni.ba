@@ -2,6 +2,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { useData } from 'vitepress'
 import BazaarQuarter from '../components/BazaarQuarter.vue'
+import NewsSection from '../components/NewsSection.vue'
 
 const { Layout } = DefaultTheme
 const { frontmatter } = useData()
@@ -10,6 +11,7 @@ const { frontmatter } = useData()
 <template>
   <Layout>
     <template #home-hero-after>
+      <NewsSection />
       <BazaarQuarter :extra="frontmatter.extraSilos ?? []" />
     </template>
     <template #home-features-before>
