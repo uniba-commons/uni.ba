@@ -8,7 +8,19 @@ tag: Event
 
 **2026.06.05** ・ Event
 
-<!-- イベントレポートをここに書きます。Discord イベントは終了後に消えるため、このページが記録として残ります。当日の様子・写真・参加者の感想・次回の案内など。 -->
-<!-- Original Discord event (link expires after the event ends): https://discord.com/events/1362285462156480705/1512262520784551946 -->
+![当日の様子](./2026-06-05-azukaritai-winenight.jpg)
+
+2026年6月5日、MIDORI.so SHIBUYA 3Fキッチンで Azukaritai ワイン会を開催しました。
+
+今回は、Azukaritai にやってきたインターンの Lucas と Andrew 歓迎会を兼ねています。美味しいナチュールワインとごはん・おつまみを用意しています。
+次回は、2026年7月2日に開催予定です。
+
+## 開催概要
+
+- 日時: 2026年6月5日（金）19:00~
+- 場所: MIDORI.so SHIBUYA 3F (※キッチン貸切)
+- 内容: Lucas / Andrew welcome、MIDORI.so Garage お披露目、ワインとご飯
+- ドリンク: Paradise Nature 特選ナチュールワイン
+- フード: Bacca Munica のピザ、たこ焼き、おつまみ等
 
 [← Home](/)
