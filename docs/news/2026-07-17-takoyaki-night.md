@@ -2,6 +2,7 @@
 title: TAKOYAKI NIGHT
 date: "2026-07-17"
 tag: Event
+thumbnail: 2026-07-17-takoyaki-night.png
 ---
 
 # TAKOYAKI NIGHT

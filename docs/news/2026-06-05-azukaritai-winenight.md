@@ -2,6 +2,7 @@
 title: Azukaritai ワイン会
 date: "2026-06-05"
 tag: Event
+thumbnail: 2026-06-05-azukaritai-winenight.jpg
 ---
 
 # Azukaritai ワイン会

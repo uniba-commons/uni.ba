@@ -4,6 +4,8 @@ export interface NewsItem {
   title: string
   date: string
   tag?: string
+  /** File name of the thumbnail image sitting next to the page in docs/news/. */
+  thumbnail?: string
   url: string
 }
 
@@ -17,6 +19,7 @@ export default createContentLoader('news/*.md', {
         title: page.frontmatter.title,
         date: toISODate(page.frontmatter.date),
         tag: page.frontmatter.tag,
+        thumbnail: page.frontmatter.thumbnail,
         url: page.url,
       }))
       .sort((a, b) => b.date.localeCompare(a.date))
