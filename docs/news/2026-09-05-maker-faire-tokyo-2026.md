@@ -17,14 +17,17 @@ UNIBA の中に立ち上げた、新しいことに挑み夢中で取り組め�
 
 - [Maker Faire Tokyo 2026 イベント公式ページ](https://makezine.jp/event/mft2026/)
 - [出展者ページ: UNIBA / Garage](https://makezine.jp/event/makers-mft2026/m0113/)
+- [UNIBA Garage](https://garage.uniba.jp/)
 
 ## 出展作品
 
-### キーキャップジェネレーター
+### Keycap Generator
 
 Webブラウザ上で動く、オリジナルのキーキャップを自由にデザインできる3Dデザインツール。生成したモデルデータを会場で3Dプリントし、来場者にプレゼントします。
 
-### みまもりロボット
+![キーキャップジェネレーターの画面。絵文字をあしらったキーキャップをデザインしている様子](./2026-09-05-maker-faire-tokyo-2026-keycap-generator.jpg)
+
+### PO-Bot - A robot for Physical Observability
 
 多種多様なセンサーで遠隔地の状況をみまもり、異常を検知して教えてくれるロボット。
 
@@ -36,9 +39,14 @@ Webブラウザ上で動く、オリジナルのキーキャップを自由に�
 
 ![ドリッパーとスケール、抽出量を表示するディスプレイ](./2026-09-05-maker-faire-tokyo-2026-brewing-coffee.jpg)
 
-### 名称未定（2点）
+### Nagashi Somen
+
+竹のレーンに流れてくる、光のそうめんをタイミング良くキャッチするゲーム。
 
 ![竹に組み込んだLEDと、5色のボタンが並ぶ操作台](./2026-09-05-maker-faire-tokyo-2026-lightbar.jpg)
+
+
+### ゲームコントローラー
 
 ![3Dプリントで作られたゲームコントローラー](./2026-09-05-maker-faire-tokyo-2026-controller.jpg)
 
