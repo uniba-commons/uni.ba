@@ -4,9 +4,19 @@
     <ul class="news-list">
       <li v-for="item in news" :key="item.url" class="news-item">
         <a class="news-row" :href="item.url">
-          <time v-if="item.date" class="news-date" :datetime="item.date">{{ formatDate(item.date) }}</time>
-          <span class="news-title">{{ item.title }}</span>
-          <span v-if="item.tag" class="news-tag">{{ item.tag }}</span>
+          <img
+            v-if="thumbnailUrl(item.thumbnail)"
+            class="news-thumb"
+            :src="thumbnailUrl(item.thumbnail)"
+            alt=""
+            loading="lazy"
+          >
+          <span v-else class="news-thumb news-thumb-empty" aria-hidden="true"></span>
+          <span class="news-body">
+            <time v-if="item.date" class="news-date" :datetime="item.date">{{ formatDate(item.date) }}</time>
+            <span class="news-title">{{ item.title }}</span>
+            <span v-if="item.tag" class="news-tag">{{ item.tag }}</span>
+          </span>
           <span class="news-arrow" aria-hidden="true">→</span>
         </a>
       </li>
@@ -16,6 +26,22 @@
 
 <script setup lang="ts">
 import { data as news } from '../news.data'
+
+// Thumbnails live next to their page in docs/news/, so resolve the file name
+// from the frontmatter through Vite to get the hashed build URL.
+const thumbnails = import.meta.glob<string>('../../news/*.{jpg,jpeg,png,webp,gif,svg}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+})
+
+const thumbnailUrls: Record<string, string> = Object.fromEntries(
+  Object.entries(thumbnails).map(([path, url]) => [path.slice(path.lastIndexOf('/') + 1), url]),
+)
+
+function thumbnailUrl(name?: string): string | undefined {
+  return name ? thumbnailUrls[name] : undefined
+}
 
 function formatDate(date: string): string {
   const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(date)
@@ -62,6 +88,28 @@ a.news-row:hover {
   color: var(--vp-c-brand-1);
 }
 
+.news-thumb {
+  flex: none;
+  width: 96px;
+  height: 54px;
+  object-fit: cover;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+}
+
+.news-thumb-empty {
+  display: block;
+}
+
+.news-body {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
 .news-date {
   flex: none;
   min-width: 92px;
@@ -102,6 +150,15 @@ a.news-row:hover .news-arrow {
 
 @media (max-width: 640px) {
   .news-row {
+    gap: 12px;
+  }
+
+  .news-thumb {
+    width: 80px;
+    height: 56px;
+  }
+
+  .news-body {
     flex-wrap: wrap;
     gap: 6px 12px;
   }
@@ -113,6 +170,7 @@ a.news-row:hover .news-arrow {
 
   .news-date {
     order: 1;
+    min-width: 0;
   }
 
   .news-tag {
